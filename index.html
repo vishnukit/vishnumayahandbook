@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalarikkal Sri Vishnumaya Temple Thrangali</title>
+  <meta name="description"
+    content="Official website of Kalarikkal Sri Vishnumaya Temple, Mannanur, Shornur, Palakkad. Problem solving, dosha nivaranam, remedies, and pooja timings in English and Tamil.">
+  <meta name="keywords"
+    content="Kalarikkal Sri Vishnumaya Temple, Vishnumaya temple Palakkad, Shornur temple, Mannanur, dosha nivaranam, problem solving remedies">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'><path d='M12 2L15 9H9L12 2ZM4 11H20L22 21H2L4 11ZM12 13C10.9 13 10 13.9 10 15C10 16.1 10.9 17 12 17C13.1 17 14 16.1 14 15C14 13.9 13.1 13 12 13Z'/></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-lang="en">
+
+  <main>
+    <!-- ==========================================================================
+         Hero Section
+         ========================================================================== -->
+    <section class="hero-section" id="home">
+      <div class="hero-overlay"></div>
+
+      <!-- Language Switcher (Anchored to Top Right) -->
+      <div class="top-lang-bar">
+        <button class="lang-switcher-btn" id="langToggleBtn" aria-label="Change Language between English and Tamil">
+          <span id="langBtnText">தமிழ்</span>
+        </button>
+      </div>
+
+      <div class="hero-content">
+        <!-- Temple Emblem Logo -->
+        <div class="hero-logo-wrap">
+          <img src="assets/logo.png" alt="Kalarikkal Sri Vishnumaya Chathan Swami Temple" class="hero-temple-logo">
+        </div>
+
+        <!-- Main Temple Title -->
+        <h1 class="hero-title">
+          <span data-i18n="temple_name" class="highlight">KALARIKKAL SRI VISHNUMAYA TEMPLE</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <!-- <p class="hero-subtitle" data-i18n="temple_sub">
+          A powerful sanctuary of Lord Sri Vishnumaya Swami offering authentic divine remedies, problem-solving consultations, and protection for all devotees.
+        </p> -->
+
+        <!-- Live Status Indicator Card -->
+        <div class="live-darshan-card" id="liveDarshanCard">
+          <div class="live-indicator-row">
+            <span class="pulse-dot" id="livePulseDot"></span>
+            <span class="live-status-label" id="liveStatusText" data-i18n="status_open">Temple Open for Devotees</span>
+          </div>
+          <div class="live-hours-sub" data-i18n="darshan_hours_today">
+            Fri to Tue: 9:00 AM – 1:00 PM | Wed & Thu: 9:00 AM – 10:00 AM
+          </div>
+        </div>
+
+        <!-- Hero Actions CTA -->
+        <div class="hero-cta-group">
+          <a href="#poojas" class="btn-primary" id="heroPoojaBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+            </svg>
+            <span data-i18n="btn_view_poojas">Temple Timings & Services</span>
+          </a>
+          <a href="#reach" class="btn-secondary" id="heroReachBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+            <span data-i18n="btn_get_directions">How to Reach</span>
+          </a>
+        </div>
+
+        <!-- Hero Stats Row -->
+        <div class="hero-stats-row">
+          <div class="stat-item">
+            <div class="stat-number" data-i18n="hero_stat_age">Ancient</div>
+            <div class="stat-sub" data-i18n="hero_stat_age_sub">Divine Heritage</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-i18n="hero_stat_poojas">5 Days/Wk</div>
+            <div class="stat-sub" data-i18n="hero_stat_poojas_sub">Problem Solving & Remedies</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-i18n="hero_stat_festivals">2 Days/Wk</div>
+            <div class="stat-sub" data-i18n="hero_stat_festivals_sub">Morning Pooja & Darshan</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Sacred Highlights Bar (Deity, Services, Location, Blessing)
+         ========================================================================== -->
+    <section class="highlights-bar" aria-label="Temple Highlights">
+      <div class="highlights-grid">
+        <!-- Presiding Deity -->
+        <div class="highlight-box">
+          <div class="highlight-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9C5 12.38 7.42 15.19 10.63 15.82L10 22H14L13.37 15.82C16.58 15.19 19 12.38 19 9C19 5.13 15.87 2 12 2ZM12 13C9.79 13 8 11.21 8 9C8 6.79 9.79 5 12 5C14.21 5 16 6.79 16 9C16 11.21 14.21 13 12 13Z" />
+            </svg>
+          </div>
+          <div class="highlight-info">
+            <h4 data-i18n="deity_title">Presiding Deity</h4>
+            <p data-i18n="deity_val">Lord Sri Vishnumaya Swami (ശ്രീ വിഷ്ണുമായ സ്വാമി)</p>
+          </div>
+        </div>
+
+        <!-- Temple Services -->
+        <div class="highlight-box">
+          <div class="highlight-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C7.03 2 3 6.03 3 11C3 14.12 4.6 16.85 7 18.46V22H17V18.46C19.4 16.85 21 14.12 21 11C21 6.03 16.97 2 12 2ZM11 20H9V19H11V20ZM15 20H13V19H15V20Z" />
+            </svg>
+          </div>
+          <div class="highlight-info">
+            <h4 data-i18n="vriksham_title">Temple Services</h4>
+            <p data-i18n="vriksham_val">Problem Solving & Dosha Nivaranam</p>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="highlight-box">
+          <div class="highlight-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+          </div>
+          <div class="highlight-info">
+            <h4 data-i18n="theertham_title">Location</h4>
+            <p data-i18n="theertham_val">Mannanur, Shornur, Palakkad (Kerala)</p>
+          </div>
+        </div>
+
+        <!-- Key Blessing -->
+        <div class="highlight-box">
+          <div class="highlight-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+          </div>
+          <div class="highlight-info">
+            <h4 data-i18n="significance_title">Key Blessing</h4>
+            <p data-i18n="significance_val">Relief from Obstacles, Protection & Family Peace</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section: Temple Timings & Services (Exact User Requirements)
+         ========================================================================== -->
+    <section class="temple-section pooja-section" id="poojas">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-badge" data-i18n="sec_pooja_badge">Schedule & Consultation</span>
+          <h2 class="section-title" data-i18n="sec_pooja_title">TEMPLE TIMINGS & SERVICES</h2>
+          <div class="section-divider">
+            <span class="divider-line"></span>
+            <span class="divider-icon">🕉️</span>
+            <span class="divider-line"></span>
+          </div>
+          <p class="section-subtitle" data-i18n="sec_pooja_subtitle">
+            Please review the specific schedule for Problem Solving & Remedies vs. Days for Poojas Only.
+          </p>
+        </div>
+
+        <!-- Schedule Cards Grid -->
+        <div class="schedule-main-grid">
+          <!-- Card 1: Days for Problem Solving & Remedies -->
+          <div class="schedule-card highlight-card">
+            <div class="schedule-card-header">
+              <span class="schedule-pill pill-primary" data-i18n="schedule_1_heading">DAYS FOR PROBLEM SOLVING &
+                REMEDIES</span>
+            </div>
+            <h3 class="schedule-days-title" data-i18n="schedule_1_days">
+              FRIDAY, SATURDAY, SUNDAY, MONDAY & TUESDAY
+            </h3>
+            <p class="schedule-desc" data-i18n="schedule_1_desc">
+              On these days, our temple provides PROBLEM SOLVING & REMEDIES for all kinds of issues and dosha nivaranam.
+            </p>
+            <div class="schedule-timing-box">
+              <div class="timing-label" data-i18n="schedule_1_timings_title">TIMINGS</div>
+              <p class="timing-info" data-i18n="schedule_1_timings_desc">
+                Devotees can visit the temple for consultations, remedies and poojas on these days.
+              </p>
+              <div class="timing-badge" data-i18n="schedule_1_time_badge">
+                MORNING 9:00 AM TO AFTERNOON 1:00 PM
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Days for Poojas Only -->
+          <div class="schedule-card">
+            <div class="schedule-card-header">
+              <span class="schedule-pill pill-secondary" data-i18n="schedule_2_heading">DAYS FOR POOJAS ONLY</span>
+            </div>
+            <h3 class="schedule-days-title" data-i18n="schedule_2_days">
+              WEDNESDAY & THURSDAY
+            </h3>
+            <p class="schedule-desc" data-i18n="schedule_2_desc">
+              On these days, POOJAS ONLY are performed in the temple.
+            </p>
+            <div class="schedule-timing-box">
+              <div class="timing-label" data-i18n="schedule_2_timings_title">TIMINGS</div>
+              <p class="timing-info" data-i18n="schedule_2_timings_desc">
+                Devotees are welcome to visit for darshan and to participate in poojas.
+              </p>
+              <div class="timing-badge badge-compact" data-i18n="schedule_2_time_badge">
+                MORNING 9:00 AM TO 10:00 AM ONLY
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prominent Important Note Card -->
+        <div class="important-notice-box">
+          <div class="notice-content">
+            <h4 data-i18n="important_note_title">IMPORTANT NOTE</h4>
+            <p data-i18n="important_note_desc">
+              Devotees are requested to visit the temple on FRIDAY, SATURDAY, SUNDAY, MONDAY & TUESDAY for problem
+              solving, remedies and poojas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section: Main Dates & Festivals
+         ========================================================================== -->
+    <section class="temple-section festivals-section" id="festivals">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-badge" data-i18n="sec_dates_badge">Auspicious Calendar</span>
+          <h2 class="section-title" data-i18n="sec_dates_title">Main Dates & Annual Festivals</h2>
+          <div class="section-divider">
+            <span class="divider-line"></span>
+            <span class="divider-icon">✨</span>
+            <span class="divider-line"></span>
+          </div>
+          <p class="section-subtitle" data-i18n="sec_dates_subtitle">
+            Important annual thithis, festivals, and divine celebrations celebrated with grand splendor.
+          </p>
+        </div>
+
+        <div class="festivals-grid">
+          <!-- Festival 1 -->
+          <div class="festival-card">
+            <div class="festival-top">
+              <span class="fest-month-badge" data-i18n="fest_1_month">Kumbham / Masi (February – March)</span>
+              <span class="fest-duration-tag" data-i18n="fest_1_days">Annual Grand Festival</span>
+            </div>
+            <h3 class="festival-title" data-i18n="fest_1_title">Annual Vishnumaya Thira Mahotsavam</h3>
+            <p class="festival-desc" data-i18n="fest_1_desc">
+              The monumental annual festival featuring traditional Thira, Roopakalam, special Kalam Ezhuthum Pattum,
+              Guruthi pooja, and grand Annadhanam with thousands of visiting devotees.
+            </p>
+          </div>
+
+          <!-- Festival 2 -->
+          <div class="festival-card">
+            <div class="festival-top">
+              <span class="fest-month-badge" data-i18n="fest_2_month">Masi / Kumbham (Feb – Mar)</span>
+              <span class="fest-duration-tag" data-i18n="fest_2_days">All-Night Jagaran</span>
+            </div>
+            <h3 class="festival-title" data-i18n="fest_2_title">Maha Shivaratri Special Pooja</h3>
+            <p class="festival-desc" data-i18n="fest_2_desc">
+              Special rituals invoking the supreme paternal grace of Lord Shiva and Lord Vishnumaya with continuous
+              abhishekams and chants.
+            </p>
+          </div>
+
+          <!-- Festival 3 -->
+          <div class="festival-card">
+            <div class="festival-top">
+              <span class="fest-month-badge" data-i18n="fest_3_month">Kanni / Purattasi (Sep – Oct)</span>
+              <span class="fest-duration-tag" data-i18n="fest_3_days">9 Sacred Days</span>
+            </div>
+            <h3 class="festival-title" data-i18n="fest_3_title">Sharad Navarathri Celebrations</h3>
+            <p class="festival-desc" data-i18n="fest_3_desc">
+              Nine sacred days of Devi & Vishnumaya alankarams, culminating in auspicious Vijayadasami Vidyarambham
+              initiation.
+            </p>
+          </div>
+
+          <!-- Festival 4 -->
+          <div class="festival-card">
+            <div class="festival-top">
+              <span class="fest-month-badge" data-i18n="fest_4_month">Vrischikam – Dhanu (Nov – Jan)</span>
+              <span class="fest-duration-tag" data-i18n="fest_4_days">41 Days Mandala</span>
+            </div>
+            <h3 class="festival-title" data-i18n="fest_4_title">Mandala Kalam & Makaravilakku Season</h3>
+            <p class="festival-desc" data-i18n="fest_4_desc">
+              Intensive 41-day spiritual prayer period with special oil lamp illuminations, Guruthi pooja, and
+              protective blessings for Ayyappa & Vishnumaya devotees.
+            </p>
+          </div>
+
+          <!-- Festival 5 -->
+          <div class="festival-card">
+            <div class="festival-top">
+              <span class="fest-month-badge" data-i18n="fest_5_month">Medam / Chithirai (April 14)</span>
+              <span class="fest-duration-tag" data-i18n="fest_5_days">New Year Auspicious Day</span>
+            </div>
+            <h3 class="festival-title" data-i18n="fest_5_title">Vishu & Kani Darshanam</h3>
+            <p class="festival-desc" data-i18n="fest_5_desc">
+              Auspicious Vishu Kani darshanam in the morning, Vishukaineettam blessings, and special sweet payasam
+              naivedyam.
+            </p>
+          </div>
+
+          <!-- Festival 6 -->
+          <div class="festival-card">
+            <div class="festival-top">
+              <span class="fest-month-badge" data-i18n="fest_6_month">Monthly Thithi</span>
+              <span class="fest-duration-tag" data-i18n="fest_6_days">Every Fortnight</span>
+            </div>
+            <h3 class="festival-title" data-i18n="fest_6_title">Pradosham & Monthly Sashti</h3>
+            <p class="festival-desc" data-i18n="fest_6_desc">
+              Special abhishekams and archana performed on auspicious Pradosham and Sashti days for peace and obstacle
+              clearance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section: Location & Ways to Reach (By Road & Train)
+         ========================================================================== -->
+    <section class="temple-section reach-section" id="reach">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-badge" data-i18n="sec_reach_badge">Travel Guide</span>
+          <h2 class="section-title" data-i18n="sec_reach_title">Location & Ways to Reach the Temple</h2>
+          <div class="section-divider">
+            <span class="divider-line"></span>
+            <span class="divider-icon">🧭</span>
+            <span class="divider-line"></span>
+          </div>
+          <p class="section-subtitle" data-i18n="sec_reach_subtitle">
+            Convenient transit options to reach Pallampetty House, Mannanur, Shornur, Palakkad.
+          </p>
+        </div>
+
+        <div class="reach-container">
+          <!-- Left: Transit Modes Tabs (Bus, Road, Train) -->
+          <div class="reach-tabs-box">
+            <div class="transit-nav">
+              <button class="transit-tab-btn active" data-transit="byBusTab">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z" />
+                </svg>
+                <span data-i18n="tab_by_bus">By Bus</span>
+              </button>
+              <button class="transit-tab-btn" data-transit="byRoadTab">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.04 3H5.81l1.04-3zM19 17H5v-4.66l.12-.34h13.77l.11.34V17z" />
+                  <circle cx="7.5" cy="14.5" r="1.5" />
+                  <circle cx="16.5" cy="14.5" r="1.5" />
+                </svg>
+                <span data-i18n="tab_by_road">By Road</span>
+              </button>
+              <button class="transit-tab-btn" data-transit="byTrainTab">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-4-4-8-4zm0 2c3.51 0 4.96.48 5.57 1H6.43c.61-.52 2.06-1 5.57-1zM6 7h12v3H6V7zm1.5 10c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
+                </svg>
+                <span data-i18n="tab_by_train">By Rail / Train</span>
+              </button>
+            </div>
+
+            <!-- Tab Pane: By Bus -->
+            <div class="transit-pane active" id="byBusTab">
+              <h3 data-i18n="bus_title">Travelling by Bus</h3>
+              <div class="bus-highlight-card" data-i18n="bus_intro">
+                From Palakkad, take a bus towards Guruvayur via Ottapalam. Get down at Koonathara Bus Stop. From there,
+                take an Auto Rickshaw to reach Kalarikkal Sree Vishnumaya Temple.
+              </div>
+              <div class="transit-steps">
+                <div class="transit-step-item">
+                  <div class="transit-step-icon">🚌</div>
+                  <div class="transit-step-info">
+                    <h4 data-i18n="bus_step1_label">Palakkad (via Ottapalam)</h4>
+                    <p data-i18n="bus_step1_desc">Board any bus from Palakkad traveling towards Guruvayur via Ottapalam.
+                    </p>
+                  </div>
+                </div>
+                <div class="transit-step-item">
+                  <div class="transit-step-icon">🚏</div>
+                  <div class="transit-step-info">
+                    <h4 data-i18n="bus_step2_label">Get down at Koonathara Bus Stop</h4>
+                    <p data-i18n="bus_step2_desc">Alight from the bus at Koonathara Bus Stop.</p>
+                  </div>
+                </div>
+                <div class="transit-step-item">
+                  <div class="transit-step-icon">🛺</div>
+                  <div class="transit-step-info">
+                    <h4 data-i18n="bus_step3_label">Take an Auto Rickshaw</h4>
+                    <p data-i18n="bus_step3_desc">From Koonathara Bus Stop, take an Auto Rickshaw to reach Kalarikkal
+                      Sree Vishnumaya Temple.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Route Assistance Box -->
+              <div class="route-assistance-box">
+                <div class="route-assist-header">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                  </svg>
+                  <h4 data-i18n="bus_assist_title">Route Assistance</h4>
+                </div>
+                <p class="route-assist-p" data-i18n="bus_assist_desc">For real-time direction help & assistance while
+                  traveling:</p>
+                <div class="route-assist-phones">
+                  <a href="tel:+919946728098" class="route-phone-btn">
+                    <span>📞 99467 28098</span>
+                  </a>
+                  <a href="tel:+918943445544" class="route-phone-btn">
+                    <span>📞 89434 45544</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Pane: By Road -->
+            <div class="transit-pane" id="byRoadTab">
+              <h3 data-i18n="road_title">Reaching By Road & Highways</h3>
+              <div class="transit-steps">
+                <div class="transit-step-item">
+                  <div class="transit-step-icon">1</div>
+                  <div class="transit-step-info">
+                    <h4 data-i18n="road_point1_label">Highway Connectivity</h4>
+                    <p data-i18n="road_point1_desc">Conveniently accessible via the Palakkad - Kulappully - Shornur road
+                      and connecting highways (NH 544 & NH 66). Well-paved roads lead straight to Mannanur and
+                      Kavalappara.</p>
+                  </div>
+                </div>
+                <div class="transit-step-item">
+                  <div class="transit-step-icon">2</div>
+                  <div class="transit-step-info">
+                    <h4 data-i18n="road_point2_label">Bus Routes & Stop</h4>
+                    <p data-i18n="road_point2_desc">Buses running between Palakkad and Guruvayur via Ottapalam stop at
+                      Koonathara Bus Stop. Devotees can take an auto rickshaw from Koonathara Bus Stop directly to the
+                      temple.</p>
+                  </div>
+                </div>
+                <div class="transit-step-item">
+                  <div class="transit-step-icon">3</div>
+                  <div class="transit-step-info">
+                    <h4 data-i18n="road_point3_label">Driving Distances</h4>
+                    <p data-i18n="road_point3_desc">From Shornur Town: ~6 km (approx. 10 mins) | From Ottapalam: ~16 km
+                      (approx. 25 mins) | From Palakkad: ~44 km (approx. 60 mins) | From Thrissur: ~48 km (approx. 65
+                      mins).</p>
+                  </div>
+                </div>
+                <div class="transit-step-item">
+                  <div class="transit-step-icon">4</div>
+                  <div class="transit-step-info">
+                    <h4 data-i18n="road_point4_label">Parking Facilities</h4>
+                    <p data-i18n="road_point4_desc">Spacious parking available on the temple premises for cars and
+                      pilgrimage vehicles.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Pane: By Train -->
+            <div class="transit-pane" id="byTrainTab">
+              <h3 data-i18n="train_title">Reaching By Train (Rail Connectivity)</h3>
+              <div class="transit-steps">
+                <div class="transit-step-item">
+                  <div class="transit-step-icon">🚂</div>
+                  <div class="transit-step-info">
+                    <h4 data-i18n="train_point1_label">Nearest Major Junction: Shornur Junction (SRR)</h4>
+                    <p data-i18n="train_point1_desc">Shornur Junction is one of the largest and most connected railway
+                      hubs in Kerala (just ~6 to 7 km away). All major superfast and express trains from Chennai,
+                      Bengaluru, Mumbai, Delhi, Coimbatore, and Trivandrum halt here.</p>
+                  </div>
+                </div>
+                <div class="transit-step-item">
+                  <div class="transit-step-icon">🚉</div>
+                  <div class="transit-step-info">
+                    <h4 data-i18n="train_point2_label">Local Station: Mannanur Railway Station</h4>
+                    <p data-i18n="train_point2_desc">Mannanur passenger station is located just about 2 km from the
+                      temple, serviced by regional passenger trains.</p>
+                  </div>
+                </div>
+                <div class="transit-step-item">
+                  <div class="transit-step-icon">🚖</div>
+                  <div class="transit-step-info">
+                    <h4 data-i18n="train_point3_label">Taxis & Auto-Rickshaws</h4>
+                    <p data-i18n="train_point3_desc">Prepaid auto-rickshaws and taxis are available 24/7 at Shornur
+                      Railway Station (Exit Gate). Ask for 'Kalarikkal Vishnumaya Temple, Pallampetty, Mannanur'.</p>
+                  </div>
+                </div>
+                <div class="transit-step-item">
+                  <div class="transit-step-icon">🚌</div>
+                  <div class="transit-step-info">
+                    <h4 data-i18n="train_point4_label">Local Bus Connection</h4>
+                    <p data-i18n="train_point4_desc">Town buses leave from Shornur bus stand towards Kavalappara /
+                      Mannanur at frequent 15-minute intervals.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Map Card -->
+          <div class="map-side-card">
+            <div class="map-embed-wrapper">
+              <!-- Google Maps embed for exact temple location -->
+              <iframe title="Temple Location Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.2!2d76.2800!3d10.7760!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7d4b0a0a0a0a1%3A0x0!2sKalarikkal+Sri+Vishnumaya+Temple!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin"
+                loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+            <div class="map-card-body">
+              <h4 data-i18n="map_address_title">Temple Address</h4>
+              <div class="temple-address-text" id="templeAddressDisplay" data-i18n="temple_full_address">
+                Pallampettiyil House, Koonathara Thrangali Road Kavalappara via Mannanur, Shoranur, Kerala 679523
+              </div>
+              <div class="map-actions">
+                <a href="https://maps.app.goo.gl/T1g5mHMxduNv7BzA7" target="_blank" rel="noopener noreferrer"
+                  class="btn-map-action btn-map-open" id="openMapsBtn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                  </svg>
+                  <span data-i18n="map_btn_open">Open in Google Maps</span>
+                </a>
+                <button class="btn-map-action btn-map-copy" id="copyAddressBtn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                  </svg>
+                  <span data-i18n="map_btn_copy">Copy Address</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section: Darshan Guidelines
+         ========================================================================== -->
+    <section class="temple-section guidelines-section" id="guidelines">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-badge" data-i18n="sec_guide_badge">Devotee Guidelines</span>
+          <h2 class="section-title" data-i18n="sec_guide_title">Temple Visiting Guidelines</h2>
+          <div class="section-divider">
+            <span class="divider-line"></span>
+            <span class="divider-icon">📜</span>
+            <span class="divider-line"></span>
+          </div>
+          <p class="section-subtitle" data-i18n="sec_guide_subtitle">
+            Kindly observe traditional customs when visiting for consultations and darshan.
+          </p>
+        </div>
+
+        <div class="guidelines-grid">
+          <!-- Guide 1 -->
+          <div class="guide-card">
+            <div class="guide-icon-wrap">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" />
+              </svg>
+            </div>
+            <h4 data-i18n="guide_1_title">Visiting Days for Remedies</h4>
+            <p data-i18n="guide_1_desc">Please plan your visit on Friday, Saturday, Sunday, Monday, or Tuesday (9:00 AM
+              – 1:00 PM) for problem-solving consultations and dosha nivaranam.</p>
+          </div>
+
+          <!-- Guide 2 -->
+          <div class="guide-card">
+            <div class="guide-icon-wrap">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+              </svg>
+            </div>
+            <h4 data-i18n="guide_2_title">Traditional Attire</h4>
+            <p data-i18n="guide_2_desc">Devotees are requested to wear modest, traditional clean attire (Dhoti / Kurta
+              for men, Saree / Salwar for women).</p>
+          </div>
+
+          <!-- Guide 3 -->
+          <div class="guide-card">
+            <div class="guide-icon-wrap">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+              </svg>
+            </div>
+            <h4 data-i18n="guide_3_title">Prior Intimation</h4>
+            <p data-i18n="guide_3_desc">For special poojas or distant travel, devotees may contact the temple helpline
+              in advance: +91 9946 728 098 / +91 8943 445 544.</p>
+          </div>
+
+          <!-- Guide 4 -->
+          <div class="guide-card">
+            <div class="guide-icon-wrap">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+              </svg>
+            </div>
+            <h4 data-i18n="guide_4_title">Prasadam & Offerings</h4>
+            <p data-i18n="guide_4_desc">Sacred raksha, bhasmam, and prasadam are given after consultations for
+              protection and obstacle removal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section: Temple Contact & Enquiry
+         ========================================================================== -->
+    <section class="temple-section contact-section" id="contact">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-badge" data-i18n="sec_contact_badge">Contact Us</span>
+          <h2 class="section-title" data-i18n="sec_contact_title">Temple Contact & Enquiry</h2>
+          <div class="section-divider">
+            <span class="divider-line"></span>
+            <span class="divider-icon">🪷</span>
+            <span class="divider-line"></span>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Phone 1 & 2 -->
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+              </svg>
+            </div>
+            <h4 data-i18n="contact_phone_label">Helpline Phone Numbers</h4>
+            <p>
+              <a href="tel:+919946728098">+91 9946 728 098</a><br>
+              <a href="tel:+918943445544">+91 8943 445 544</a>
+            </p>
+          </div>
+
+          <!-- Email -->
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+            </div>
+            <h4 data-i18n="contact_email_label">Official Email</h4>
+            <p><a href="mailto:connect@srivishnumaya.com" data-i18n="contact_email_val">connect@srivishnumaya.com</a>
+            </p>
+          </div>
+
+          <!-- Website -->
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+              </svg>
+            </div>
+            <h4 data-i18n="contact_website_label">Official Website</h4>
+            <p><a href="http://www.srivishnumaya.com" target="_blank" rel="noopener noreferrer"
+                data-i18n="contact_website_val">www.srivishnumaya.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-main-row">
+        <!-- Brand & Blessing -->
+        <div class="footer-brand-col">
+          <h3 data-i18n="temple_name">KALARIKKAL SRI VISHNUMAYA TEMPLE</h3>
+          <p class="footer-blessing-text" data-i18n="footer_blessing">
+            May Lord Sri Vishnumaya Swami protect and bless you and your family with peace, health, success, and
+            prosperity.
+          </p>
+        </div>
+
+        <!-- Quick Links Column 1 -->
+        <div class="footer-col">
+          <h4 data-i18n="footer_quick_links">Quick Sections</h4>
+          <ul class="footer-links-list">
+            <li><a href="#poojas" data-i18n="nav_poojas">Timings & Services</a></li>
+            <li><a href="#festivals" data-i18n="nav_festivals">Main Dates</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links Column 2 -->
+        <div class="footer-col">
+          <h4 data-i18n="nav_reach">Ways to Reach</h4>
+          <ul class="footer-links-list">
+            <li><a href="#reach" data-i18n="tab_by_bus">By Bus</a></li>
+            <li><a href="#reach" data-i18n="tab_by_road">By Road</a></li>
+            <li><a href="#reach" data-i18n="tab_by_train">By Rail / Train</a></li>
+            <li><a href="#guidelines" data-i18n="nav_guidelines">Guidelines</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright" data-i18n="footer_copyright">
+          © 2026 Kalarikkal Sri Vishnumaya Temple. All Rights Reserved.
+        </div>
+        <button class="footer-lang-btn" id="footerLangToggleBtn" aria-label="Change Language between English and Tamil">
+          <span id="footerLangBtnText">தமிழ்</span>
+        </button>
+        <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Back to Top">
+          <span>▲ Back to Top</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container for Copied Address -->
+  <div class="toast-msg" id="copyToast" data-i18n="map_copied_alert">
+    Address copied to clipboard!
+  </div>
+
+  <!-- Route Image Popup Modal: By Bus (shows byroad.png) -->
+  <div class="route-img-modal" id="byBusModal" role="dialog" aria-modal="true" aria-label="By Bus Route Map">
+    <div class="route-img-modal-content">
+      <button class="route-img-close-btn" id="closeByBusModal" aria-label="Close">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+      <img src="assets/byroad.png" alt="By Bus Route Map" class="route-modal-img" />
+    </div>
+  </div>
+
+  <!-- Route Image Popup Modal: By Train (shows bytrain.png) -->
+  <div class="route-img-modal" id="byTrainModal" role="dialog" aria-modal="true" aria-label="By Train Route Map">
+    <div class="route-img-modal-content">
+      <button class="route-img-close-btn" id="closeByTrainModal" aria-label="Close">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+      <img src="assets/bytrain.png" alt="By Train Route Map" class="route-modal-img" />
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
