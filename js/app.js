@@ -9,37 +9,37 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentLang = localStorage.getItem("temple_lang") || "en";
 
   // Elements
-  const langToggleBtn    = document.getElementById("langToggleBtn");
-  const copyAddressBtn   = document.getElementById("copyAddressBtn");
-  const copyToast        = document.getElementById("copyToast");
-  const livePulseDot     = document.getElementById("livePulseDot");
-  const liveStatusText   = document.getElementById("liveStatusText");
-  const liveHoursSub     = document.querySelector(".live-hours-sub");
-  const liveDarshanCard  = document.getElementById("liveDarshanCard");
+  const langToggleBtn = document.getElementById("langToggleBtn");
+  const copyAddressBtn = document.getElementById("copyAddressBtn");
+  const copyToast = document.getElementById("copyToast");
+  const livePulseDot = document.getElementById("livePulseDot");
+  const liveStatusText = document.getElementById("liveStatusText");
+  const liveHoursSub = document.querySelector(".live-hours-sub");
+  const liveDarshanCard = document.getElementById("liveDarshanCard");
 
   // ── Temple Schedule Constants (must be defined before first use) ────────────
   // Fri(5), Sat(6), Sun(0), Mon(1), Tue(2) → 9:00 AM – 1:00 PM  (remedies)
   // Wed(3), Thu(4)                          → 9:00 AM – 10:00 AM (poojas only)
-  const REMEDY_DAYS  = new Set([0, 1, 2, 5, 6]);
-  const POOJA_DAYS   = new Set([3, 4]);
+  const REMEDY_DAYS = new Set([0, 1, 2, 5, 6]);
+  const POOJA_DAYS = new Set([3, 4]);
   const DAY_NAMES_EN = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const DAY_NAMES_TA = ["ஞாயிறு", "திங்கள்", "செவ்வாய்", "புதன்", "வியாழன்", "வெள்ளி", "சனி"];
 
   function isOpenAt(day, timeDec) {
     if (REMEDY_DAYS.has(day)) return timeDec >= 9.0 && timeDec < 13.0;
-    if (POOJA_DAYS.has(day))  return timeDec >= 9.0 && timeDec < 10.0;
+    if (POOJA_DAYS.has(day)) return timeDec >= 9.0 && timeDec < 10.0;
     return false;
   }
 
   function hoursForDay(day) {
     if (REMEDY_DAYS.has(day)) return "9:00 AM – 1:00 PM";
-    if (POOJA_DAYS.has(day))  return "9:00 AM – 10:00 AM";
+    if (POOJA_DAYS.has(day)) return "9:00 AM – 10:00 AM";
     return null;
   }
 
   function hoursForDayTa(day) {
     if (REMEDY_DAYS.has(day)) return "காலை 9:00 – மதியம் 1:00";
-    if (POOJA_DAYS.has(day))  return "காலை 9:00 – 10:00";
+    if (POOJA_DAYS.has(day)) return "காலை 9:00 – 10:00";
     return null;
   }
 
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.title =
       lang === "ta"
         ? "களரிக்கல் ஸ்ரீ விஷ்ணுமாயா திருக்கோயில் | அதிகாரப்பூர்வ இணையதளம்"
-        : "Kalarikkal Sri Vishnumaya Temple | Official Website";
+        : "Kalarikkal Sri Vishnumaya Temple | Devotee Handbook";
 
     // Update Language Toggle Button Appearance (No flags)
     const langBtnText = document.getElementById("langBtnText");
@@ -106,13 +106,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateDarshanStatus() {
     if (!livePulseDot || !liveStatusText) return;
 
-    const now         = new Date();
-    const day         = now.getDay();                        // 0=Sun … 6=Sat
-    const timeDec     = now.getHours() + now.getMinutes() / 60;
-    const isTa        = currentLang === "ta";
-    const dayNames    = isTa ? DAY_NAMES_TA : DAY_NAMES_EN;
-    const langData    = translations[currentLang] || translations.en;
-    const open        = isOpenAt(day, timeDec);
+    const now = new Date();
+    const day = now.getDay();                        // 0=Sun … 6=Sat
+    const timeDec = now.getHours() + now.getMinutes() / 60;
+    const isTa = currentLang === "ta";
+    const dayNames = isTa ? DAY_NAMES_TA : DAY_NAMES_EN;
+    const langData = translations[currentLang] || translations.en;
+    const open = isOpenAt(day, timeDec);
 
     // ── 1. Pulse dot & card state ────────────────────────────────────────────
     if (open) {
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
         const nextHours = isTa ? hoursForDayTa(nextDay) : hoursForDay(nextDay);
-        const nextName  = dayNames[nextDay];
+        const nextName = dayNames[nextDay];
 
         // If before opening today
         if ((REMEDY_DAYS.has(day) || POOJA_DAYS.has(day)) && timeDec < 9.0) {
@@ -189,9 +189,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const transitPanes = document.querySelectorAll(".transit-pane");
 
   // Route image modals
-  const byBusModal  = document.getElementById("byBusModal");
+  const byBusModal = document.getElementById("byBusModal");
   const byTrainModal = document.getElementById("byTrainModal");
-  const closeByBusModal  = document.getElementById("closeByBusModal");
+  const closeByBusModal = document.getElementById("closeByBusModal");
   const closeByTrainModal = document.getElementById("closeByTrainModal");
   let routeModalTimer = null;
   let reachSectionTriggered = false; // show byBusModal only once on first scroll-in
@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Close button handlers
-  if (closeByBusModal)  closeByBusModal.addEventListener("click",  () => closeModal(byBusModal));
+  if (closeByBusModal) closeByBusModal.addEventListener("click", () => closeModal(byBusModal));
   if (closeByTrainModal) closeByTrainModal.addEventListener("click", () => closeModal(byTrainModal));
 
   // Backdrop click to close
@@ -288,7 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Copy Address to Clipboard
   if (copyAddressBtn) {
     copyAddressBtn.addEventListener("click", () => {
-      const addressText = document.getElementById("templeAddressDisplay")?.textContent || 
+      const addressText = document.getElementById("templeAddressDisplay")?.textContent ||
         "Pallampetty House, Thrangali Mannanur Po, Kavalappara Via Shornur, Palakkad, Kerala 679523";
 
       navigator.clipboard.writeText(addressText.trim()).then(() => {
